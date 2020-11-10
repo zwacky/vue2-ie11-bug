@@ -12,9 +12,11 @@ function mount() {
 }
 
 async function start() {
-	mount();
+	const vm = mount();
 	
-	await delay(500);
+  await delay(500);
+  
+  vm.$destroy();
 	
   document.querySelector('#app').innerHTML = '';
 	
