@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1>{{ msg }} v({{ revisionNumber }})</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -35,6 +35,18 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data: function() {
+    return {
+      revisionNumber: 1
+    }
+  },
+  mounted: function() {
+    console.log('mounted');
+
+    setTimeout(() => {
+      this.revisionNumber = 2;
+    }, 750);
   }
 }
 </script>
