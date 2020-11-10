@@ -16,11 +16,13 @@ async function start() {
 	
   await delay(500);
   
+  console.log('[main] destroying');
   vm.$destroy();
 
   // add delay to potentially wait for vm to be fully destroyed
   await delay(100);
-	
+  
+  console.log('[main] emptying');
   document.querySelector('#app').innerHTML = '';
 	
 	await delay(500);

@@ -42,11 +42,12 @@ export default {
     }
   },
   mounted: function() {
-    console.log('mounted');
+    console.log('[comp] mounted');
 
     // let's assume a request is done here and 750ms later comes back with data
     // and is about to change the component state
     setTimeout(() => {
+      console.log('[comp] set property');
       this.revisionNumber = 2;
     }, 750);
   }
